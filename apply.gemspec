@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Apply yourself selectively.}
   spec.description   = %q{Wraps single-argument procs in conditional closures.}
-  spec.homepage      = "https://https://github.com/johncarney/apply"
+  spec.homepage      = "https://github.com/johncarney/apply"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
