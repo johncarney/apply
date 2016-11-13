@@ -13,14 +13,12 @@ passed to the proc. If the condition is false, the argument is returned immediat
 require "apply"
 
 # Upcase strings that start with a lowercase letter
-upcaser = Apply(&:upcase).if { |value| value =~ /^[a-z]/ }
-
-%w{ Alice bob Carol }.map(&upcaser) # => [ "Alice", "BOB", "Carol" ]
+upcase_if_starts_with_lowercase = Apply(&:upcase).if { |value| value =~ /^[a-z]/ }
+%w{ Alice bob Carol }.map(&upcase_if_starts_with_lowercase) # => [ "Alice", "BOB", "Carol" ]
 
 # Parenthesize non-nil values
-parenthesizer = Apply { |text| "(#{text})" }.unless(&:nil?)
-
-[ "Alice", nil, "Carol" ].map(&parenthesizer) # => [ "(Alice)", nil, "(Bob)" ]
+parenthesize_unless_nil = Apply { |text| "(#{text})" }.unless(&:nil?)
+[ "Alice", nil, "Carol" ].map(&parenthesize_unless_nil) # => [ "(Alice)", nil, "(Bob)" ]
 
 ```
 
